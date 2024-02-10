@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="template/template :: head">
+</head>
+<body>
+<header th:replace="template/template :: header" ></header>
+
+    <div class="container">
+
+        <div class="card bg_light">
+            <div class="card-header bg-dark text-white" th:text="${title}"></div>
+            <div class="card-body">
+
+                <form th:action="@{/api/v1/branchOffice/showOne}" th:object="${branchOffice}" method="post">
+                    <div class="form-group row">
+                        <label for="nameBranchOffice" >Id</label>
+                        <input type="text" th:field="*{pk_BranchOfficeID}" class="form-control" id="nameBranchOffice" placeholder="Branch office id">
+                        <small></small>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Get</button>
+                </form>
+            </div>
+        </div>
+
+</div>
+
+<footer th:replace="template/template :: footer"></footer>
+
+</body>
+</html>

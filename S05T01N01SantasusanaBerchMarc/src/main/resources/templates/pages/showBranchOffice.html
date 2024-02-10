@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="template/template :: head">
+</head>
+<body>
+<header th:replace="template/template :: header" ></header>
+
+<div class="container">
+    <h1 th:text="${title}"></h1>
+</div>
+
+<div class="container">
+
+    <table class="table">
+        <thead class="table-dark">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Country</th>
+            <th scope="col">Type</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="bo:${branchOffice}">
+
+            <th scope="row" th:text="${bo.pk_BranchOfficeID}"></th>
+            <td th:text="${bo.nameBranchOffice}"></td>
+            <td th:text="${bo.countryBranchOffice}"></td>
+            <td th:text="${bo.typeBranchOffice}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<footer th:replace="template/template :: footer"></footer>
+
+</body>
+</html>
